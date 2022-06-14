@@ -1,0 +1,18 @@
+from turtle import color
+import matplotlib
+from SINDy import ode4
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x,y):
+    dydt = -x*y
+    return dydt
+
+init_val = 1
+
+x = np.linspace(0,10,500)
+
+y = ode4(f, init_val, x)
+
+plt.show(x, y, color = 'r', label = "calling a function as a module!!" )
+
